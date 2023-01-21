@@ -1,0 +1,64 @@
+.jobs{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    height: 100vh;
+    .jobs__background{
+        background-color: $desaturatedDarkCyan;
+        height: 156px;
+    }
+    .jobs__list{
+        width: 100%;
+        position: absolute;
+        margin-top: 120px;
+    }
+}
+
+.card__content{
+    margin-left: 165px;
+    margin-right: 165px;
+    &.filter{
+        height: 72px;
+        margin-bottom: 40px;        
+    }
+    &.job{
+        height: 150px;
+        margin-bottom: 26px     
+    }
+}
+.card__body{
+    background-color: $lightGrayishCyanTablets;
+    height: 100%;
+    border-left: 5px solid $lightGrayishCyanTablets;
+    &.featured{
+        border-left: 5px solid $desaturatedDarkCyan;
+    }
+    border-radius: 4px;
+    display: flex;
+    width: 100%;
+    .body__content{
+        padding: 0 40px 0 40px;
+        width: 100%;
+        display: flex;
+        .data{
+            flex: 1;
+            display: flex;
+            .data__foto{
+
+            }
+            .data__job{
+                
+            }
+        }
+        .tags{
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+    }
+}
+.card__hide{
+    display: none;
+}
