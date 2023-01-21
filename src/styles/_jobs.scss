@@ -4,9 +4,15 @@
     flex-flow: column;
     align-items: flex-start;
     height: 100vh;
+    width: 100vw;
     .jobs__background{
         background-color: $desaturatedDarkCyan;
         height: 156px;
+        width: 100vw;
+        img{
+            max-height: 156px;
+            width: 100%;
+        }
     }
     .jobs__list{
         width: 100%;
@@ -38,17 +44,31 @@
     display: flex;
     width: 100%;
     .body__content{
-        padding: 0 40px 0 40px;
+        padding: 0 35px 0 35px;
         width: 100%;
         display: flex;
         .data{
             flex: 1;
             display: flex;
             .data__foto{
-
+                width: 88px;
+                padding: 31px 0;
+                margin-right: 25px;
             }
             .data__job{
-                
+                padding: 31px 0;
+                display: flex;
+                flex-flow: column;
+                justify-content: space-between;
+                .job__company{
+                    color: $desaturatedDarkCyan;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                h1{
+                    font-size: 22px;
+                    margin: 0;
+                }
             }
         }
         .tags{
