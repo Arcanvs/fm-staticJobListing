@@ -34,15 +34,16 @@
     }
 }
 .card__body{
-    background-color: $lightGrayishCyanTablets;
+    background-color: #fff;
     height: 100%;
-    border-left: 5px solid $lightGrayishCyanTablets;
+    border-left: 5px solid #fff;
     &.featured{
         border-left: 5px solid $desaturatedDarkCyan;
     }
     border-radius: 4px;
     display: flex;
     width: 100%;
+    filter: $shadow;
     .body__content{
         padding: 0 35px 0 35px;
         width: 100%;
@@ -60,10 +61,46 @@
                 display: flex;
                 flex-flow: column;
                 justify-content: space-between;
+                div{
+                    display: flex;
+                }
                 .job__company{
                     color: $desaturatedDarkCyan;
                     font-size: 18px;
                     font-weight: 700;
+                    margin-right: 10px;
+                }
+                .job__at{
+                    font-size: 18px;
+                    color: $darkGrayishCyan;
+                    span:first-child{
+                        padding-right: 16px;
+                    }
+                    span:not(:first-child){
+                        padding-right: 16px; 
+                        &::before{
+                            content: '·';
+                            padding-right: 16px;    
+                        }
+                    }
+                }
+                .job__badge{
+                    height: 24px;
+                    margin: 0 5px;
+                    padding: 0 8px;
+                    border-radius: 12px;
+                    line-height: 28px;
+                    color: #fff;
+                    span{
+                        line-height: 28px;
+                        font-size: 14px;
+                    }
+                    &.new{
+                        background-color: $desaturatedDarkCyan;
+                    }
+                    &.featured{
+                        background-color: #000;
+                    }
                 }
                 h1{
                     font-size: 22px;
@@ -76,6 +113,32 @@
             display: flex;
             align-items: center;
             justify-content: end;
+            div{
+                height: 32px;
+                margin: 0 8px;    
+                padding: 0 10px;
+                border-radius: 5px;
+                background-color: $lightGrayishCyanBackground;
+                color: $desaturatedDarkCyan;
+                span{
+                    line-height: 28px;    
+                    line-height: 35px;
+                }
+            }
+        }
+        &.filter{
+            justify-content: space-between;
+            align-items: center;
+        }
+        .buttons{
+            span{
+                height: 32px;
+                margin: 0 8px;    
+                padding: 0 10px;
+                border-radius: 5px;
+                background-color: $lightGrayishCyanBackground;
+                color: $desaturatedDarkCyan;
+            }
         }
     }
 }
