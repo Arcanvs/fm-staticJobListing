@@ -29,7 +29,7 @@
         margin-bottom: 40px;        
     }
     &.job{
-        height: 150px;
+        min-height: 150px;
         margin-bottom: 26px     
     }
 }
@@ -113,6 +113,7 @@
             display: flex;
             align-items: center;
             justify-content: end;
+            padding: 31px 0;
             div{
                 height: 32px;
                 margin: 0 8px;    
@@ -144,4 +145,74 @@
 }
 .card__hide{
     display: none;
+}
+
+@media (max-width: 1240px){
+	.body__content{
+        flex-flow: column;
+        .tags{
+            justify-content: start !important;
+        }
+    }
+}
+
+@media (max-width: 815px){
+	.card__content{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .body__content{
+        flex-flow: column;
+        .tags{
+            justify-content: start !important;
+        }
+    }
+}
+
+@media (max-width: 545px){
+	.card__content{
+        margin-left: 30px;
+        margin-right: 30px;
+        &.job{
+            margin-bottom: 55px !important;
+        }
+    }
+    .body__content{
+        flex-flow: column;
+        padding: 0 20px 0 20px !important;
+        .data{
+            position: relative;
+            .data__foto{
+                padding: 0px !important;
+                position: absolute;
+                top: -30px;
+                width: auto;
+                img{
+                    width: 60px;
+                }
+            }
+            .data__job{
+                padding: 50px 0 31px 0 !important;
+                height: 100px;
+                .job__at{
+                    font-size: 13px !important;
+                }
+                .job__company{
+                    font-size: 16px !important;
+                }
+                h1{
+                    font-size: 16px !important;
+                }
+            }
+        }
+        .tags{
+            justify-content: start !important;
+            flex-flow: wrap;
+            border-top: 1px solid $darkGrayishCyan;
+            padding: 20px 0 !important; 
+            div{
+                margin: 8px !important;
+            }
+        }
+    }
 }
