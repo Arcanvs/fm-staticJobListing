@@ -121,6 +121,11 @@
                 border-radius: 5px;
                 background-color: $lightGrayishCyanBackground;
                 color: $desaturatedDarkCyan;
+                cursor: pointer;
+                &:hover{
+                    background-color: $desaturatedDarkCyan;
+                    color: $lightGrayishCyanBackground; 
+                }
                 span{
                     line-height: 28px;    
                     line-height: 35px;

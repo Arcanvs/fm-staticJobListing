@@ -1,6 +1,9 @@
-const Card = ({jobCard}) => {
+const Card = ({jobCard, onChangeTags}) => {
     const classes = ["card__body", jobCard.featured ? "featured" : null].join(" ");
-    
+    const handleClickTags = (value) => {
+        onChangeTags(value);
+    }
+
     return (
     <div className="card__content job">
         <div className={classes}>
@@ -25,10 +28,10 @@ const Card = ({jobCard}) => {
                     </div>
                 </div>
                 <div className="tags">
-                    { jobCard.role && <div><span>{jobCard.role}</span></div> }
-                    { jobCard.level && <div><span>{jobCard.level}</span></div> }
+                    { jobCard.role && <div onClick={() => handleClickTags(jobCard.role)}><span>{jobCard.role}</span></div> }
+                    { jobCard.level && <div onClick={() => handleClickTags(jobCard.level)}><span>{jobCard.level}</span></div> }
                     { jobCard.languages.map((lang, index) => {
-                        return <div key={index} ><span>{lang}</span></div>
+                        return <div onClick={() => handleClickTags(lang)} key={index} ><span>{lang}</span></div>
                     })} 
                 </div>
             </div>
