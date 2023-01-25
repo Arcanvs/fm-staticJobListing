@@ -5,7 +5,7 @@ const Card = ({jobCard, onChangeTags}) => {
     }
 
     return (
-    <div className="card__content job">
+    <div className="card job">
         <div className={classes}>
             <div className="body__content">
                 <div className="data">

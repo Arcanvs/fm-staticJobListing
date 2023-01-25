@@ -25,12 +25,23 @@ const ListJobs = ({listData}) => {
         listTags.splice(index, 1);
         setListTags([...listTags]);
     }
-    return (
+    /* 
     <div className="jobs__list">
         <Filter selectedDetail={listTags} onClearAllTags={handleClearAllTags} onClearTag={handleClearTag}/>
         {listData.map((item)=>{
             return <Card key={item.id}  jobCard={item} onChangeTags={handleChangeTags} />
         })}
+    </div>
+    
+    */
+    return (
+    <div className="jobs__list">
+        <div className="list__content">
+            <Filter selectedDetail={listTags} onClearAllTags={handleClearAllTags} onClearTag={handleClearTag}/>
+            {listData.map((item)=>{
+                return <Card key={item.id}  jobCard={item} onChangeTags={handleChangeTags} />
+            })}
+        </div>
     </div>
   )
 }

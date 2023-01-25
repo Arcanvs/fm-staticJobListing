@@ -8,7 +8,7 @@ const Filter = ({selectedDetail, onClearAllTags, onClearTag}) => {
     onClearTag(delTag);
   }
   return (
-    <div className="card__content filter">
+    <div className="card filter">
         <div className={selectedDetail.length > 0 ? 'card__body' : 'card__hide' }>
             <div className="body__content filter">
               <div className="buttons">
