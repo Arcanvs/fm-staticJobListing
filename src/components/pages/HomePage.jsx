@@ -13,7 +13,6 @@ const HomePage = () => {
     <div className="jobs">
         <BackGround />
         { jsonData && <ListJobs listData={jsonData} /> }        
-        
     </div>
   )
 }

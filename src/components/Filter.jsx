@@ -7,12 +7,6 @@ const Filter = ({selectedDetail, onClearAllTags, onClearTag}) => {
   const handleClearFilter = (delTag) => {
     onClearTag(delTag);
   }
-  /* 
-  <span key={index}>
-                        {tag}
-                        <img src={btnRemove} alt="ico_romve" onClick={() => handleClearFilter(tag)} />
-                      </span>
-  */
   return (
     <div className="filter">
         <div className={selectedDetail.length > 0 ? 'card' : 'card__hide' }>

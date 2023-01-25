@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import HomePage from './components/pages/HomePage'
 
 function App() {
-
   return (
     <main className="App">
       <HomePage />
