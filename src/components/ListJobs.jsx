@@ -5,6 +5,7 @@ import Filter from "./Filter";
 const ListJobs = ({listData}) => {
     const [listTags, setListTags] = useState([]);
     const [listDataFilter, setListDataFilter] = useState([]);
+    const [listDataFilterTags, setListDataFilterTags] = useState([]);
     
     useEffect(() => {
         setListDataFilter([...listData]);
@@ -32,7 +33,6 @@ const ListJobs = ({listData}) => {
         let index = listTags.indexOf(delTag);
         listTags.splice(index, 1);
         setListTags([...listTags]);
-        console.log('TAGS DEL - ', listTags);
         if(listTags.length > 0){
             filterListDelete();
         }else{
@@ -49,16 +49,23 @@ const ListJobs = ({listData}) => {
     }
 
     const filterListDelete = () => {
-        let parcialFilter = [];
+        let resultadosParciales = [];
         listTags.map((tag) => {
             let parcialFilterData = listData.filter((job) => {
-                if(job.level === tag){ return job }
-                if(job.role === tag){ return job }
-                if(job.languages.includes(tag)){ return job }
-            })
-            parcialFilter = [...parcialFilterData];
+                if(job.level === tag) return job 
+                if(job.role === tag) return job 
+                if(job.languages.includes(tag)) return job
+            });
+            resultadosParciales = [...resultadosParciales, ...parcialFilterData];
         })
-        setListDataFilter([...parcialFilter]);
+        
+        const parcialFilterClean = resultadosParciales.reduce((parcialArr,item)=>{
+            if(!parcialArr.includes(item)){
+                parcialArr.push(item);
+            }
+            return parcialArr;
+        },[])
+        setListDataFilter([...parcialFilterClean]);
     }
 
     return (
