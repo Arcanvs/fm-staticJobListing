@@ -10,7 +10,7 @@ const Card = ({jobCard, onChangeTags}) => {
             <div className="body__content">
                 <div className="data">
                     <div className="data__foto">
-                        <img src={`../../public/${jobCard.logo}`} alt={jobCard.company} />
+                        <img src={`${jobCard.logo}`} alt={jobCard.company} />
                     </div>
                     <div className="data__job">
                         <div>
